@@ -13,4 +13,7 @@ Scenario: Search Experience for product search in both home and offers page
 
 Given User is on GreenCart landing page
 When User searched with short name "Tom" and extracted actual name of product
-Then User search for the same short name in offers page to check if product exists
+Then User search for "Tom" short name in offers page
+And validate product name in offers page matches with Landing Page
+
+
