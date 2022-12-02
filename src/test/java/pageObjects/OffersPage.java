@@ -11,8 +11,8 @@ public class OffersPage {
 		this.driver = driver;
 	}
 	
-	By searchTextBox = By.xpath("//input[@type='search']");
-	By productName = By.cssSelector("tr td:nth-child(1)");
+	private By searchTextBox = By.xpath("//input[@type='search']");
+	private By productName = By.cssSelector("tr td:nth-child(1)");
 	
 	
 	public void searchItem(String name) {
@@ -22,6 +22,5 @@ public class OffersPage {
 	public String getProductName() {
 		return driver.findElement(productName).getText();
 	}
-	
 	
 }
