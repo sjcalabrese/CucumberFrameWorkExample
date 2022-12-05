@@ -22,14 +22,14 @@ public class TestBase {
 				System.getProperty("user.dir") + "\\src\\test\\resources\\global.properties");
 		Properties prop = new Properties();
 		prop.load(fis);
-
-		if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
-			if (driver == null) {
+		System.out.println("driver: " + driver);
+		if (driver == null) {
+			if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
 				driver.get(prop.getProperty("QAUrl"));
 			}
-			
+
 		}
 		return driver;
 	}
