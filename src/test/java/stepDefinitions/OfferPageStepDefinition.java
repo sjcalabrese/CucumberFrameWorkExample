@@ -23,7 +23,7 @@ public class OfferPageStepDefinition {
 		this.testContextSetup = testContextSetup;
 	}
 
-	@Then("User search for {string} short name in offers page")
+	@Then("^User search for (.+) short name in offers page$")
 	public void user_search_for_the_same_short_name_in_offers_page_to_check_if_product_exists(String shortName) throws InterruptedException{
 
 		OffersPage offersPage =testContextSetup.pageObjectManager.getOffersPage();
