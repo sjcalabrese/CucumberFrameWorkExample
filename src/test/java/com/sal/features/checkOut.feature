@@ -7,17 +7,17 @@
 #Then: To observe outcomes or validation
 #And,But: To enumerate more Given,When,Then steps
 
-Feature: Search and Place the order for Products
+Feature: Place the order for Products
 
-@OffersPage
+@PlaceOrder
 Scenario Outline: Search Experience for product search in both home and offers page
 
 Given User is on GreenCart landing page
 When User searched with short name <Names> and extracted actual name of product
-Then User search for <Names> short name in offers page
-And validate product name in offers page matches with Landing Page
+And Added "3" items of the selected product to cart
+Then User proceeds to Checkout and validates the <Names> items in checkout page
+And verify user is able to enter promo code and place order
 
 Examples:
 | Names |
 | Tom 	|
-| Beet	|

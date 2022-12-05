@@ -3,6 +3,7 @@ package utils;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -27,9 +28,10 @@ public class TestBase {
 			if (prop.getProperty("browser").equalsIgnoreCase("chrome")) {
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
-				driver.get(prop.getProperty("QAUrl"));
+				
 			}
-
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.get(prop.getProperty("QAUrl"));
 		}
 		return driver;
 	}
